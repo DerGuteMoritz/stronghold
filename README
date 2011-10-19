@@ -1,0 +1,13 @@
+# stronghold
+
+Rule based authorization.
+
+## Usage
+
+FIXME: write
+
+## License
+
+Copyright (C) 2011 Moritz Heidkamp
+
+Distributed under the Eclipse Public License, the same as Clojure.
