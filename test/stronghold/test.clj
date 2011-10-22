@@ -39,4 +39,17 @@
     (it "should allow 3 as an exception"
       (allowed? policy 3))
     (it "should deny other odd numbers"
-      (not (allowed? policy 9)))))
+      (not (allowed? policy 9))))
+
+  (testing "calling without arguments"
+    (given [policy [(deny even?)
+                    (allow)]]
+      (it "should deny even numbers"
+        (not (allowed? policy 10)))
+      (it "should allow odd numbers"
+        (allowed? policy 5)))
+
+    (given [policy [(deny)
+                    (allow even?)]]
+      (it "should not allow even numbers"
+        (not (allowed? policy 10))))))

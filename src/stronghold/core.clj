@@ -12,8 +12,11 @@
              allow?)
            (recur more access)))))
 
-(defn allow [pred]
-  [pred true])
+(defn allow
+  ([pred] [pred true])
+  ([] [(constantly true) true]))
 
-(defn deny [pred]
-  [pred false])
+(defn deny
+  ([pred] [pred false])
+  ([] [(constantly true) false]))
+
